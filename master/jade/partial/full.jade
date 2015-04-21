@@ -1,0 +1,54 @@
+script(type="text/x-kendo-template", id="tmpl-full")
+  .row-item
+    # if (brsFullName && brsTreatyName != "Basel Convention") { #
+    p
+      b Full name:
+      | &nbsp;#:brsFullName#
+    # } #
+    # if (brsContactRoleName) { #
+    p
+      b Role:
+      | &nbsp;#:brsContactRoleName#
+    # } #
+    # if (brsPartyNameEn) { #
+    p
+      b Country:
+      | &nbsp;#:brsPartyNameEn#
+    # } #
+    # if (position) { #
+    p
+      b Job title:
+      | &nbsp;#:position#
+    # } #
+    # if (department) { #
+    p
+      b Department:
+      | &nbsp;#:department#
+    # } #
+    # if (institution) { #
+    p
+      b Institution:
+      | &nbsp;#:institution#
+    # } #
+    # if (address) { #
+    p
+      b Postal address:
+      | &nbsp;#:address#
+    # } #
+    # if (phoneNumber) { #
+    p
+      b Phone:
+      | &nbsp;#:phoneNumber#
+    # } #
+    # if (fax) { #
+    p
+      b Fax:
+      | &nbsp;#:fax#
+    # } #
+    # if (email) { #
+    p
+      b E-mail:
+      | &nbsp;#:email#
+    # } #
+
+    hr

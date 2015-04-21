@@ -1,0 +1,27 @@
+doctype html
+html(lang="en", ng-app="ContactsApp")
+  head
+    link(rel="stylesheet", href="app/css/bootstrap.css")
+    link(rel="stylesheet",href="//cdn.kendostatic.com/2014.3.1411/styles/kendo.common.min.css")
+    link(id="theme", rel="stylesheet",href="//cdn.kendostatic.com/2014.3.1411/styles/kendo.silver.min.css")
+
+    link(rel='stylesheet', href='app/css/contacts.css')
+    script(type='text/javascript', src="//code.jquery.com/jquery-1.9.1.min.js")
+    script(type='text/javascript', src="//cdn.kendostatic.com/2014.3.1411/js/angular.min.js")
+    script(type='text/javascript', src="//cdn.kendostatic.com/2014.3.1411/js/kendo.all.min.js")
+    script(type='text/javascript', src="app/js/contacts.js")
+  body.k-group(ng-controller="ContactsCtrl")
+    .search-form.k-block(ng-show="showSearchForm")
+      form(id="searchForm")
+        .form-group
+          label(for="country") Country:
+          input.form-control(id="country",kendo-drop-down-list, k-option-label="'Select country...'",k-data-text-field="'text'",k-data-value-field="'value'",ng-model="country", k-data-source="countriesDataSource", k-on-change="change()")
+        .form-group
+          label(for="roles") Roles:
+          select.form-control(id="roles", kendo-multi-select, k-option-label="'Select role...'",k-data-text-field="'value'",k-data-value-field="'value'", k-data-source="rolesDataSource",ng-model="roles", k-on-change="change()")
+
+    div(id="content", style="height: 350px; overflow: auto;")
+    div(id="pager", ng-hide="hidePager")
+    include partial/full
+    include partial/mini
+
