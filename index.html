@@ -1,66 +1,74 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ConfigApp">
+<html lang="en">
   <head>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.kendostatic.com/2014.3.1411/styles/kendo.common.min.css">
     <link rel="stylesheet" href="//cdn.kendostatic.com/2014.3.1411/styles/kendo.silver.min.css">
-    <link rel="stylesheet" href="app/css/config.css">
+    <link rel="stylesheet" href="/Resources/Shared/scripts/appCHMWidgets/app/css/config.css">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="//cdn.kendostatic.com/2014.3.1411/js/angular.min.js"></script>
     <script type="text/javascript" src="//cdn.kendostatic.com/2014.3.1411/js/kendo.all.min.js"></script>
-    <script type="text/javascript" src="app/js/config.js"></script>
+    <script type="text/javascript" src="/Resources/Shared/scripts/appCHMWidgets/app/js/config.js"></script>
   </head>
   <body>
-    <div ng-controller="ConfigCtrl" class="container-fluid">
+    <div ng-app="ConfigApp" ng-controller="ConfigCtrl" class="container-fluid">
+      <h1>Contacts widget configuration</h1>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12">
           <div class="row">
-            <div class="col-md-12">
-              <h2>Configuration</h2>
-              <form>
-                <div class="form-group">
-                  <label for="countryField">Country</label>
-                  <select id="countryField" kendo-drop-down-list k-option-label="'Select country...'" k-data-text-field="'text'" k-data-value-field="'value'" ng-model="country" k-on-change="change()" k-data-source="countriesDataSource" class="form-control"></select>
-                </div>
-                <div class="form-group">
-                  <label for="roleField">Role</label>
-                  <select id="roleField" kendo-multi-select k-option-label="'Select role...'" k-data-text-field="'value'" k-data-value-field="'value'" k-data-source="rolesDataSource" ng-model="roles" ng-change="change()" class="form-control"></select>
-                </div>
-                <div class="form-group">
-                  <label for="themeField">Theme</label>
-                  <select id="themeField" kendo-drop-down-list k-option-label="'Select theme...'" k-data-text-field="'text'" k-data-value-field="'value'" k-data-source="themesDataSource" ng-model="theme" k-on-change="change()" class="form-control"></select>
-                </div>
-                <div class="form-group">
-                  <label for="tmplField">Template</label>
-                  <select id="tmplField" kendo-drop-down-list k-option-label="'Select template...'" k-data-text-field="'text'" k-data-value-field="'value'" k-data-source="tmplDataSource" ng-model="tmpl" k-on-change="change()" class="form-control"></select>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" ng-model="showSearchForm" ng-change="changeShowSearchForm()">Show search form?
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" ng-model="hidePager" ng-change="changeHidePager()">Hide pager?
-                  </label>
-                </div>
-              </form>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="countryField">Country</label>
+                <select id="countryField" kendo-drop-down-list k-option-label="'Select country...'" k-data-text-field="'text'" k-data-value-field="'value'" ng-model="country" k-on-change="change()" k-data-source="countriesDataSource" class="form-control"></select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="roleField">Role</label>
+                <select id="roleField" kendo-multi-select k-option-label="'Select role...'" k-data-text-field="'value'" k-data-value-field="'value'" k-data-source="rolesDataSource" ng-model="roles" ng-change="change()" class="form-control"></select>
+              </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
-              <h2>Code</h2>
-              <textarea id="code" style="width: 100%; height: 200px"></textarea>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="themeField">Theme</label>
+                <select id="themeField" kendo-drop-down-list k-option-label="'Select theme...'" k-data-text-field="'text'" k-data-value-field="'value'" k-data-source="themesDataSource" ng-model="theme" k-on-change="change()" class="form-control"></select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="tmplField">Template</label>
+                <select id="tmplField" kendo-drop-down-list k-option-label="'Select template...'" k-data-text-field="'text'" k-data-value-field="'value'" k-data-source="tmplDataSource" ng-model="tmpl" k-on-change="change()" class="form-control"></select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-inline">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="showSearchForm" ng-change="changeShowSearchForm()">&nbsp;Show search form?
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="hidePager" ng-change="changeHidePager()">&nbsp;Hide pager?
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-8">
-          <div class="row">
-            <div class="col-md-12">
-              <h2>Preview</h2>
-              <iframe id="preview" src="contacts.html" style="width:500px;height: 383px" frameborder="0"></iframe>
-            </div>
-          </div>
+      </div>
+      <h1>Preview</h1>
+      <div class="row">
+        <div class="col-md-12">
+          <iframe id="preview" src="/Resources/Shared/scripts/appCHMWidgets/contacts.html" style="width:500px;height: 383px" frameborder="0"></iframe>
+        </div>
+      </div>
+      <h1>Code</h1>
+      <div class="row">
+        <div class="col-md-12">
+          <textarea id="code" style="width: 100%; height: 70px"></textarea>
         </div>
       </div>
     </div>

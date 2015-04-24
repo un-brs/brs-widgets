@@ -1,6 +1,7 @@
 angular
   .module('ContactsApp', [ 'kendo.directives' ])
-  .controller('ContactsCtrl', ["$location", "$scope", "$timeout", ($location, $scope, $timeout) ->
+  .controller('ContactsCtrl', ["$location", "$scope",  ($location, $scope) ->
+    # @codekit-prepend "variables.coffee";
     initList = (mode) ->
       $("#content").kendoListView(
         {
@@ -91,7 +92,7 @@ angular
         type: 'json'
         transport: {
           read: {
-            url: 'app/json/countries.json'
+            url: "#{baseUrl}/app/json/countries.json"
           }
         }
       }
@@ -100,7 +101,7 @@ angular
         type: 'json'
         transport: {
           read: {
-            url: 'app/json/roles.json'
+            url: "#{baseUrl}/app/json/roles.json"
           }
         }
       }

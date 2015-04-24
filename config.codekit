@@ -60,11 +60,38 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/contacts.html": {
+	"\/app\/json\/countries.json": {
 		"fileType": 8192,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/contacts.html",
+		"inputAbbreviatedPath": "\/app\/json\/countries.json",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/app\/json\/roles.json": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/json\/roles.json",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/app\/json\/themes.json": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/json\/themes.json",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/app\/json\/tmpls.json": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/json\/tmpls.json",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -74,15 +101,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/example.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/index.html": {
-		"fileType": 8192,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -110,6 +128,19 @@
 		"outputAbbreviatedPath": "\/app\/js\/contacts.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/master\/coffee\/variables.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/master\/coffee\/variables.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/app\/js\/variables.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
@@ -153,6 +184,17 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/master\/jade\/partial\/mini.jade",
 		"outputAbbreviatedPath": "\/master\/jade\/partial\/mini.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/master\/jade\/partial\/variables.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/master\/jade\/partial\/variables.jade",
+		"outputAbbreviatedPath": "\/variables.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
@@ -1677,10 +1719,10 @@
 	"browserRefreshDelay": 0,
 	"coffeeAutoOutputPathEnabled": 1,
 	"coffeeAutoOutputPathFilenamePattern": "*.js",
-	"coffeeAutoOutputPathRelativePath": "",
+	"coffeeAutoOutputPathRelativePath": "app\/js",
 	"coffeeAutoOutputPathReplace1": "",
 	"coffeeAutoOutputPathReplace2": "",
-	"coffeeAutoOutputPathStyle": 0,
+	"coffeeAutoOutputPathStyle": 1,
 	"coffeeCreateSourceMap": 0,
 	"coffeeLintFlags2": {
 		"arrow_spacing": {
@@ -1813,7 +1855,7 @@
 	"coffeeSyntaxCheckerStyle": 1,
 	"externalServerAddress": "http:\/\/localhost:8888",
 	"externalServerPreviewPathAddition": "",
-	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
+	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp, json",
 	"hamlAutoOutputPathEnabled": 1,
 	"hamlAutoOutputPathFilenamePattern": "*.html",
 	"hamlAutoOutputPathRelativePath": "",
@@ -1829,10 +1871,10 @@
 	"hamlUseUnixNewlines": 0,
 	"jadeAutoOutputPathEnabled": 1,
 	"jadeAutoOutputPathFilenamePattern": "*.html",
-	"jadeAutoOutputPathRelativePath": "",
+	"jadeAutoOutputPathRelativePath": "\/",
 	"jadeAutoOutputPathReplace1": "",
 	"jadeAutoOutputPathReplace2": "",
-	"jadeAutoOutputPathStyle": 0,
+	"jadeAutoOutputPathStyle": 1,
 	"jadeCompileDebug": 1,
 	"jadeOutputStyle": 0,
 	"javascriptAutoOutputPathEnabled": 1,

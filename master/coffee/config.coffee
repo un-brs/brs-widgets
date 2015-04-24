@@ -1,13 +1,15 @@
 angular
   .module('ConfigApp', [ 'kendo.directives' ])
   .controller('ConfigCtrl', ["$scope", "$location", ($scope, $location) ->
+
     iframe = document.getElementById("preview")
+    # @codekit-prepend "variables.coffee";
     #$(iframe).attr("src", $location.absUrl().substr(0, document.URL.lastIndexOf('/')) + "/contacts.html")
     $scope.countriesDataSource = {
       type: 'json'
       transport: {
         read: {
-          url: 'app/json/countries.json'
+          url: "#{baseUrl}/app/json/countries.json"
         }
       }
     }
@@ -16,7 +18,7 @@ angular
       type: 'json'
       transport: {
         read: {
-          url: 'app/json/roles.json'
+          url: "#{baseUrl}/app/json/roles.json"
         }
       }
     }
@@ -25,7 +27,7 @@ angular
       type: 'json'
       transport: {
         read: {
-          url: 'app/json/themes.json'
+          url: "#{baseUrl}/app/json/themes.json"
         }
       }
     }
@@ -34,21 +36,21 @@ angular
       type: 'json'
       transport: {
         read: {
-          url: 'app/json/tmpls.json'
+          url: "#{baseUrl}/app/json/tmpls.json"
         }
       }
     }
 
     changeCode = ->
-      url = $(iframe).attr('src').replace('https:', '/').replace('http:', '/')
+      url = $(iframe).attr('src')
       $("#code").text('<iframe src="' + url + '" style="'+$(iframe).attr('style')+'" frameborder="0"></iframe>')
       return
 
     $scope.changeShowSearchForm = ->
       if $scope.showSearchForm
-        $(iframe).height($(iframe).height() + 110)
+        $(iframe).height($(iframe).height() + 113)
       else
-        $(iframe).height($(iframe).height() - 110)
+        $(iframe).height($(iframe).height() - 113)
       $scope.change()
 
     $scope.changeHidePager = ->
@@ -79,8 +81,7 @@ angular
       for filter in filters
         filter_str += "#{delim}#{filter.key}=#{filter.value}"
         delim = "&"
-      url = $location.absUrl().substr(0, document.URL.lastIndexOf('/')) + "/contacts.html#/?#{filter_str}"
-      url = url.replace('https:', '/').replace('http:', '/')
+      url = "#{baseUrl}/contacts.html#/?#{filter_str}"
       $(iframe).attr("src", url)
       iframe.contentDocument.location.reload(true)
       iframe.src = iframe.src

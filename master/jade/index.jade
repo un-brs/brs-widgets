@@ -1,51 +1,55 @@
+include partial/variables
 doctype html
-html(lang="en", ng-app="ConfigApp")
+html(lang="en")
   head
     link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
     link(rel="stylesheet", href="//cdn.kendostatic.com/2014.3.1411/styles/kendo.common.min.css")
     link(rel="stylesheet", href="//cdn.kendostatic.com/2014.3.1411/styles/kendo.silver.min.css")
-    link(rel='stylesheet', href='app/css/config.css')
+    link(rel='stylesheet', href='#{baseUrl}/app/css/config.css')
     script(type='text/javascript', src="//code.jquery.com/jquery-1.9.1.min.js")
     script(type='text/javascript', src="//cdn.kendostatic.com/2014.3.1411/js/angular.min.js")
     script(type='text/javascript', src="//cdn.kendostatic.com/2014.3.1411/js/kendo.all.min.js")
-    script(type='text/javascript', src="app/js/config.js")
+    script(type='text/javascript', src="#{baseUrl}/app/js/config.js")
   body
-    .container-fluid(ng-controller="ConfigCtrl")
+    .container-fluid(ng-app="ConfigApp", ng-controller="ConfigCtrl")
+      h1 Contacts widget configuration
       .row
-        .col-md-4
+        .col-md-12
           .row
-            .col-md-12
-              h2 Configuration
-              form
-                .form-group
-                  label(for="countryField") Country
-                  select.form-control(id="countryField", kendo-drop-down-list, k-option-label="'Select country...'",k-data-text-field="'text'",k-data-value-field="'value'",ng-model="country",k-on-change="change()",k-data-source="countriesDataSource")
-                .form-group
-                  label(for="roleField") Role
-                  select.form-control(id="roleField", kendo-multi-select, k-option-label="'Select role...'",k-data-text-field="'value'",k-data-value-field="'value'",k-data-source="rolesDataSource",ng-model="roles",ng-change="change()")
-                .form-group
-                  label(for="themeField") Theme
-                  select.form-control(id="themeField", kendo-drop-down-list, k-option-label="'Select theme...'",k-data-text-field="'text'",k-data-value-field="'value'",k-data-source="themesDataSource",ng-model="theme",k-on-change="change()")
-                .form-group
-                  label(for="tmplField") Template
-                  select.form-control(id="tmplField", kendo-drop-down-list, k-option-label="'Select template...'",k-data-text-field="'text'",k-data-value-field="'value'",k-data-source="tmplDataSource",ng-model="tmpl", k-on-change="change()")
-                .checkbox
-                  label
-                    input(type="checkbox", ng-model="showSearchForm",ng-change="changeShowSearchForm()")
-                    | Show search form?
-                .checkbox
-                  label
-                    input(type="checkbox", ng-model="hidePager",ng-change="changeHidePager()")
-                    | Hide pager?
-
+            .col-md-6
+              .form-group
+                label(for="countryField") Country
+                select.form-control(id="countryField", kendo-drop-down-list, k-option-label="'Select country...'",k-data-text-field="'text'",k-data-value-field="'value'",ng-model="country",k-on-change="change()",k-data-source="countriesDataSource")
+            .col-md-6
+              .form-group
+                label(for="roleField") Role
+                select.form-control(id="roleField", kendo-multi-select, k-option-label="'Select role...'",k-data-text-field="'value'",k-data-value-field="'value'",k-data-source="rolesDataSource",ng-model="roles",ng-change="change()")
           .row
-            .col-md-12
-              h2 Code
-              textarea(id="code", style="width: 100%; height: 200px")
-        .col-md-8
+            .col-md-6
+              .form-group
+                label(for="themeField") Theme
+                select.form-control(id="themeField", kendo-drop-down-list, k-option-label="'Select theme...'",k-data-text-field="'text'",k-data-value-field="'value'",k-data-source="themesDataSource",ng-model="theme",k-on-change="change()")
+            .col-md-6
+              .form-group
+                label(for="tmplField") Template
+                select.form-control(id="tmplField", kendo-drop-down-list, k-option-label="'Select template...'",k-data-text-field="'text'",k-data-value-field="'value'",k-data-source="tmplDataSource",ng-model="tmpl", k-on-change="change()")
           .row
-            .col-md-12
-              h2 Preview
-              iframe(id="preview", src="contacts.html", style="width:500px;height: 383px", frameborder="0")
+            .col-md-12.form-inline
+              .checkbox
+                label
+                  input(type="checkbox", ng-model="showSearchForm",ng-change="changeShowSearchForm()")
+                  | &nbsp;Show search form?
+              .checkbox
+                label
+                  input(type="checkbox", ng-model="hidePager",ng-change="changeHidePager()")
+                  | &nbsp;Hide pager?
+      h1 Preview
+      .row
+          .col-md-12
+            iframe(id="preview", src="#{baseUrl}/contacts.html", style="width:500px;height: 383px", frameborder="0")
+      h1 Code
+      .row
+        .col-md-12
+          textarea(id="code", style="width: 100%; height: 70px")
 
 
