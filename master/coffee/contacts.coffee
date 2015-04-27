@@ -1,7 +1,10 @@
-angular
-  .module('ContactsApp', [ 'kendo.directives' ])
-  .controller('ContactsCtrl', ["$location", "$scope",  ($location, $scope) ->
-    # @codekit-prepend "variables.coffee";
+# @codekit-prepend "config-common"
+app = angular.module('ContactsApp', [ 'kendo.directives', 'WidgetsApp.config'])
+
+app.controller('ContactsCtrl'
+  ["$location", "$scope", "BASE_URL", "THEME_URL",
+  ($location, $scope, BASE_URL, THEME_URL) ->
+    themeTmpl = kendo.template(THEME_URL)
     initList = (mode) ->
       $("#content").kendoListView(
         {
@@ -73,7 +76,11 @@ angular
     # Theme
     # =========================================================================
     if params["theme"]
-      $("#theme").attr("href", params["theme"])
+      theme = params["theme"]
+    else
+      theme = "silver"
+    $("#theme").attr("href", themeTmpl({"theme": theme}))
+
     # =========================================================================
     # Template
     # =========================================================================
@@ -92,7 +99,7 @@ angular
         type: 'json'
         transport: {
           read: {
-            url: "#{baseUrl}/app/json/countries.json"
+            url: "#{BASE_URL}/app/json/countries.json"
           }
         }
       }
@@ -101,7 +108,7 @@ angular
         type: 'json'
         transport: {
           read: {
-            url: "#{baseUrl}/app/json/roles.json"
+            url: "#{BASE_URL}/app/json/roles.json"
           }
         }
       }

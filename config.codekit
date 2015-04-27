@@ -38,23 +38,23 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/app\/js\/contacts.js": {
+	"\/app\/js\/config-common.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/app\/js\/contacts.js",
-		"outputAbbreviatedPath": "\/app\/js\/min\/contacts-min.js",
+		"inputAbbreviatedPath": "\/app\/js\/config-common.js",
+		"outputAbbreviatedPath": "\/app\/js\/min\/config-common-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/app\/js\/news.js": {
+	"\/app\/js\/config.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/app\/js\/news.js",
-		"outputAbbreviatedPath": "\/app\/js\/min\/news-min.js",
+		"inputAbbreviatedPath": "\/app\/js\/config.js",
+		"outputAbbreviatedPath": "\/app\/js\/min\/config-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -94,6 +94,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/app\/json\/news-categories.json",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/app\/json\/news-range.json": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/json\/news-range.json",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -152,6 +161,19 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/master\/coffee\/config-common.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/master\/coffee\/config-common.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/app\/js\/config-common.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
 	"\/master\/coffee\/config-contacts.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -194,13 +216,26 @@
 	"\/master\/coffee\/contacts.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/master\/coffee\/contacts.coffee",
 		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/app\/js\/contacts.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/master\/coffee\/news.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/master\/coffee\/news.coffee",
+		"minifyOutput": 0,
+		"outputAbbreviatedPath": "\/app\/js\/news.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
@@ -239,6 +274,28 @@
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 0
 		},
+	"\/master\/jade\/news.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/master\/jade\/news.jade",
+		"outputAbbreviatedPath": "\/news.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/master\/jade\/partial\/full-news.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/master\/jade\/partial\/full-news.jade",
+		"outputAbbreviatedPath": "\/full-news.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
 	"\/master\/jade\/partial\/full.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -246,6 +303,17 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/master\/jade\/partial\/full.jade",
 		"outputAbbreviatedPath": "\/master\/jade\/partial\/full.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/master\/jade\/partial\/mini-news.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/master\/jade\/partial\/mini-news.jade",
+		"outputAbbreviatedPath": "\/mini-news.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
@@ -1711,6 +1779,15 @@
 		"strictImports": 0,
 		"strictMath": 0,
 		"strictUnits": 0
+		},
+	"\/news.html": {
+		"fileType": 8192,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/news.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/scripts\/get_countries.coffee": {
 		"createSourceMap": 0,

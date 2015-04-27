@@ -47,11 +47,11 @@ html(lang="en")
         h1 Preview
         .row
             .col-md-12
-              iframe(id="preview", src="#{baseUrl}/contacts.html", style="width:500px;height: 383px", frameborder="0")
+              iframe(id="preview-contacts", src="#{baseUrl}/contacts.html", style="width:500px;height: 383px", frameborder="0")
         h1 Code
         .row
           .col-md-12
-            textarea(id="code", style="width: 100%; height: 70px")
+            textarea(id="code-contacts", style="width: 100%; height: 70px")
       .news(ng-controller="NewsCtrl")
         h1 News widget configuration
         .row
@@ -68,8 +68,8 @@ html(lang="en")
               .row
                 .col-md-4
                   .form-group
-                    label(for="timeField") Time range
-                    select.form-control(id="themeField", kendo-drop-down-list, k-option-label="'All news'",k-data-text-field="'text'",k-data-value-field="'value'",k-data-source="rangeDataSource",ng-model="range",k-on-change="change()")
+                    label(for="timeRangeField") Time range
+                    select.form-control(id="timeRangeField", kendo-drop-down-list, k-option-label="'All time'",k-data-text-field="'text'",k-data-value-field="'value'",k-data-source="timeRangeDataSource",ng-model="timeRange",k-on-change="change()")
                 .col-md-4
                   .form-group
                     label(for="themeField") Theme
@@ -79,6 +79,12 @@ html(lang="en")
                     label(for="tmplField") Template
                     select.form-control(id="tmplField", kendo-drop-down-list, k-option-label="'Select template...'",k-data-text-field="'text'",k-data-value-field="'value'",k-data-source="tmplDataSource",ng-model="tmpl", k-on-change="change()")
         h1 Preview
+        .row
+          .col-md-12
+            iframe(id="preview-news", src="#{baseUrl}/news.html", style="width:500px;height: 383px", frameborder="0")
         h1 Code
+        .row
+          .col-md-12
+            textarea(id="code-news", style="width: 100%; height: 70px")
 
 
