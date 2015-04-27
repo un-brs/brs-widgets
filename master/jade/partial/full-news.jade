@@ -1,20 +1,18 @@
 script(type="text/x-kendo-template", id="tmpl-full-news")
   .row-item
     p
+      b #: kendo.toString(dateCreated, 'dd.MM.yyyy')# &nbsp;
       # if (url) { #
-      a(href="#: url#", target="_blank")
+      a.k-link(href="#: url#", target="_blank")
         b #= title#
       #} else {#
       b #= title#
       #}#
     p
-      b #: kendo.toString(dateCreated, 'dd.MM.yyyy')#
-    p
+      b Convention: &nbsp;
+      | #: treaty# &nbsp;
       b Categories: &nbsp;
       | #: categories#
-
-    b Convention: &nbsp;
-      | #: treaty#
     table
       tr
         # if (imgUrl) { #

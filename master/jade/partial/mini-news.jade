@@ -1,0 +1,12 @@
+script(type="text/x-kendo-template", id="tmpl-mini-news")
+  .row-item
+    p
+      b #: kendo.toString(dateCreated, 'dd.MM.yyyy')# &nbsp;
+      # if (url) { #
+      a.k-link(href="#: url#", target="_blank")
+        b #= title#
+      #} else {#
+      b #= title#
+      #}#
+
+    hr

@@ -35,7 +35,7 @@ app.controller('NewsCtrl'
     # Template
     # =========================================================================
     if params["tmpl"]
-      $scope.tmpl = params["tmpl"]
+      $scope.tmpl = "#{params.tmpl}-news"
     else
       $scope.tmpl = "full-news"
 

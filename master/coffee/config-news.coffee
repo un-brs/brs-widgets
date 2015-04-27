@@ -1,4 +1,5 @@
-app.controller('NewsCtrl', ["$location", "$scope", 'BASE_URL',  ($location, $scope, BASE_URL) ->
+app.controller('NewsCtrl', ["$location", "$scope", 'BASE_URL', 'EXCLUDE_NEWS_CATEGORIES',
+($location, $scope, BASE_URL, EXCLUDE_NEWS_CATEGORIES) ->
 
   iframe = document.getElementById("preview-news")
 
@@ -10,26 +11,22 @@ app.controller('NewsCtrl', ["$location", "$scope", 'BASE_URL',  ($location, $sco
         }
       }
   }
-  $scope.categoriesDataSource = {
+  $scope.categoriesDataSource = new kendo.data.DataSource({
       type: 'json'
       transport: {
         read: {
           url: "#{BASE_URL}/app/json/news-categories.json"
         }
       }
-      filter: [
-        {
-          field: "value"
-          operator: (
-            (left, filter) ->
-              for e in filter()
-                return true if left.indexOf(e) == -1
-              false
-          )
-          value: -> "Archive"
-        }
-      ]
-  }
+    }
+  )
+
+  filters = []
+  for category in EXCLUDE_NEWS_CATEGORIES
+     filters.push({
+       field: "value", operator: "doesnotcontain", value: category
+     })
+  $scope.categoriesDataSource.filter(filters)
 
   $scope.themesDataSource ={
     type: 'json'
@@ -90,5 +87,6 @@ app.controller('NewsCtrl', ["$location", "$scope", 'BASE_URL',  ($location, $sco
     iframe.src = iframe.src
     changeCode()
     return
+  $scope.change()
   return
 ])
